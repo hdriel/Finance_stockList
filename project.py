@@ -1,5 +1,6 @@
 import csv
 import matplotlib.pyplot as plt
+import numpy as np
 import pprint
 ##
 ## Hadriel Benjo
@@ -52,13 +53,11 @@ def bar(Sector, sector_str):
     for i in range(len(sector_str)):
         bins.append(i)
         ax.plot([],[], label='{0}-{1} : {2}'.format(i,i+1,sector_str[i]))
-        
+
     for s in range(len(Sector)):
         for l in range(len(sector_str)):
             if(sector_str[l] == Sector[s]):
                 Sector[s] = l
-
-    
     
     ax.set_xticks(bins)
     plt.hist(Sector, bins, histtype='bar', rwidth = 0.8)
@@ -71,10 +70,13 @@ bar(Sector, sector_str)
 ## ---------------------------------------------------------------------
 ## plot pie graph
 def pie(sector_val, sector_str):
+    explodes = np.zeros(len(sector_str), dtype = float)
+    explodes[sector_str.index('Financial')] = 0.1
+    
     plt.pie(sector_val,
             labels = sector_str ,
             startangle = 40,
-            #explode = explodes,
+            explode = explodes,
             autopct = '%1.1f%%')
     
     plt.title('PIE GRAPH\nDistribution of sectors from the list of shares in the file')
