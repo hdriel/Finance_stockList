@@ -47,7 +47,7 @@ for k,v in sector_frequencies.items():
 ## ---------------------------------------------------------------------
 ## plot bar graph
 def bar(Sector, sector_str):
-    ax = plt.subplot2grid((1,1),(0,0))
+    ax = plt.subplot2grid((1,2),(0,0))
     
     bins = []
     for i in range(len(sector_str)):
@@ -60,25 +60,31 @@ def bar(Sector, sector_str):
                 Sector[s] = l
     
     ax.set_xticks(bins)
-    plt.hist(Sector, bins, histtype='bar', rwidth = 0.8)
+    ax.hist(Sector, bins, histtype='bar', rwidth = 0.8)
 
     plt.title('BAR GRAPH\nDistribution of sectors from the list of shares in the file')
     ax.legend()
-    plt.show()
-bar(Sector, sector_str)
+    #plt.show()
+    
 
 ## ---------------------------------------------------------------------
 ## plot pie graph
 def pie(sector_val, sector_str):
+    ax = plt.subplot2grid((1,2),(0,1))
+    
     explodes = np.zeros(len(sector_str), dtype = float)
     explodes[sector_str.index('Financial')] = 0.1
     
-    plt.pie(sector_val,
+    ax.pie(sector_val,
             labels = sector_str ,
             startangle = 40,
             explode = explodes,
             autopct = '%1.1f%%')
     
     plt.title('PIE GRAPH\nDistribution of sectors from the list of shares in the file')
-    plt.show()
+    #plt.show()
+
+bar(Sector, sector_str)
 pie(sector_val, sector_str)
+
+plt.show()
