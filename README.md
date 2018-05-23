@@ -35,7 +35,5 @@ Output:
 * Here are screenshots of the project:
 
 <div>
-<img src="https://profile.fcdn.co.il/images2/0__05b03660937a09.jpg" width="500" style="padding:1px;border:1px solid #021a40;background-color:#FFF;"> 
-
-<img src="https://profile.fcdn.co.il/images2/0__05b036616ee132.jpg" width="500" style="padding:1px;border:1px solid #021a40;background-color:#FFF;"> 
+<img src="https://profile.fcdn.co.il/images2/0__05b05baa42d8d7.jpg" width="500" style="padding:1px;border:1px solid #021a40;background-color:#FFF;"> 
 </div>
